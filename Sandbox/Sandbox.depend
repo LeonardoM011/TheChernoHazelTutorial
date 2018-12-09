@@ -1,0 +1,18 @@
+# depslib dependency file v1.0
+1544368857 source:/home/leonardom011/Development/Projects/Tutorials/TheChernoHazelTutorial/Sandbox/src/Application.cpp
+
+1544388428 source:/home/leonardom011/Development/Projects/Tutorials/TheChernoHazelTutorial/Sandbox/src/SandboxApp.cpp
+	<Hazel.h>
+
+1544388832 /home/leonardom011/Development/Projects/Tutorials/TheChernoHazelTutorial/Hazel/src/Hazel.h
+	<iostream>
+	"Hazel/Application.h"
+	"Hazel/EntryPoint.h"
+
+1544388371 /home/leonardom011/Development/Projects/Tutorials/TheChernoHazelTutorial/Hazel/src/Hazel/Application.h
+	"Core.h"
+
+1544386683 /home/leonardom011/Development/Projects/Tutorials/TheChernoHazelTutorial/Hazel/src/Hazel/Core.h
+
+1544388830 /home/leonardom011/Development/Projects/Tutorials/TheChernoHazelTutorial/Hazel/src/Hazel/EntryPoint.h
+

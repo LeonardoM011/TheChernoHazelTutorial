@@ -1,0 +1,9 @@
+# depslib dependency file v1.0
+1544388784 source:/home/leonardom011/Development/Projects/Tutorials/TheChernoHazelTutorial/Hazel/src/Hazel/Application.cpp
+	"Application.h"
+
+1544388371 /home/leonardom011/Development/Projects/Tutorials/TheChernoHazelTutorial/Hazel/src/Hazel/Application.h
+	"Core.h"
+
+1544386683 /home/leonardom011/Development/Projects/Tutorials/TheChernoHazelTutorial/Hazel/src/Hazel/Core.h
+
