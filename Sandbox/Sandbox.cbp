@@ -12,12 +12,14 @@
 				<Option type="1" />
 				<Option compiler="gcc" />
 				<Compiler>
+					<Add option="-std=c++11" />
 					<Add option="-g" />
 					<Add option="-DHZ_PLATFORM_LINUX" />
 					<Add directory="../Hazel/src" />
+					<Add directory="../Hazel/vendor/spdlog/include" />
 				</Compiler>
 				<Linker>
-					<Add library="../Hazel/bin/Debug/libHazel.so" />
+					<Add library="../Hazel/bin/Debug/libHazel.a" />
 				</Linker>
 			</Target>
 			<Target title="Release">
