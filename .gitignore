@@ -1,5 +1,15 @@
 # Directories
-Hazel/bin/
-Sandbox/bin/
+bin/
+bin-int/
+.codelite/
+.build-debug/
 
 # Files
+Hazel.workspace
+Makefile
+Hazel/Hazel.mk
+Hazel/Hazel.project
+Hazel/Hazel.txt
+Sandbox/Sandbox.mk
+Sandbox/Sandbox.project
+Sandbox/Sandbox.txt
