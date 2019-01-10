@@ -36,13 +36,6 @@ project "Hazel"
 		staticruntime "On"
 		systemversion "latest"
 
-		links 
-		{ 
-			"Xrandr",
-			"Xi",
-			"X11"
-		}
-
 		defines
 		{
 			"HZ_PLATFORM_LINUX",

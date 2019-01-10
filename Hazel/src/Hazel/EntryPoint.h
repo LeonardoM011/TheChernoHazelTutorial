@@ -18,8 +18,6 @@
         auto app = Hazel::CreateApplication();
         app->Run();
         delete app;
-        
-        return 0;
     }
 
 #else
