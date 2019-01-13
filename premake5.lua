@@ -18,6 +18,9 @@ project "Hazel"
 	targetdir ("bin/" .. outputdir .. "/%{prj.name}")
 	objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
 
+	pchheader "hzpch.h"
+	pchsource "Hazel/src/hzpch.cpp"
+
 	files
 	{
 		"%{prj.name}/src/**.h",
@@ -60,24 +63,30 @@ project "Hazel"
 
 	filter "configurations:Debug"
 		defines "HZ_DEBUG"
---		buildoptions "/MDd"
+		runtime "Debug"
+		staticruntime "Off"
 		symbols "On"
 	filter { "system:windows", "configurations:Debug" }
-		buildoptions "/MDd"
+		runtime "Debug"
+		staticruntime "Off"
 
 	filter "configurations:Release"
 		defines "HZ_RELEASE"
---		buildoptions "/MD"
+		runtime "Debug"
+		staticruntime "Off"
 		optimize "On"
 	filter { "system:windows", "configurations:Release" }
-		buildoptions "/MD"
+		runtime "Debug"
+		staticruntime "Off"
 
 	filter "configurations:Dist"
 		defines "HZ_DIST"
---		buildoptions "/MD"
+		runtime "Debug"
+		staticruntime "Off"
 		optimize "On"
 	filter { "system:windows", "configurations:Dist" }
-		buildoptions "/MD"
+		runtime "Debug"
+		staticruntime "Off"
 
 project "Sandbox"
 	location "Sandbox"
@@ -126,21 +135,27 @@ project "Sandbox"
 
 	filter "configurations:Debug"
 		defines "HZ_DEBUG"
---		buildoptions "/MDd"
+		runtime "Debug"
+		staticruntime "Off"
 		symbols "On"
 	filter { "system:windows", "configurations:Debug" }
-		buildoptions "/MDd"
+		runtime "Debug"
+		staticruntime "Off"
 
 	filter "configurations:Release"
 		defines "HZ_RELEASE"
---		buildoptions "/MD"
+		runtime "Debug"
+		staticruntime "Off"
 		optimize "On"
 	filter { "system:windows", "configurations:Release" }
-		buildoptions "/MD"
+		runtime "Debug"
+		staticruntime "Off"
 
 	filter "configurations:Dist"
 		defines "HZ_DIST"
---		buildoptions "/MD"
+		runtime "Debug"
+		staticruntime "Off"
 		optimize "On"
 	filter { "system:windows", "configurations:Dist" }
-		buildoptions "/MD"
+		runtime "Debug"
+		staticruntime "Off"

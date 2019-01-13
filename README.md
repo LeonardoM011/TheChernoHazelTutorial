@@ -21,6 +21,6 @@ rm -r tmpfiles
 and choosing option: **Import Files From Directory...** and checking **src** folder
 
 ##### Credit
-All credit goes to [**TheChernoProject**](https://www.youtube.com/channel/UCQ-W1KE9EYfdxhL6S4twUNw):
-https://www.youtube.com/channel/UCQ-W1KE9EYfdxhL6S4twUNw
-Link to playlist: https://thecherno.com/engine
+All credit goes to [**TheChernoProject**](https://www.youtube.com/channel/UCQ-W1KE9EYfdxhL6S4twUNw):  
+https://www.youtube.com/channel/UCQ-W1KE9EYfdxhL6S4twUNw  
+Link to playlist: https://thecherno.com/engine  
