@@ -8,7 +8,6 @@ bin-int/
 # Files
 Hazel.workspace
 Hazel.sln
-Makefile
 Hazel/Hazel.mk
 Hazel/Hazel.project
 Hazel/Hazel.txt
