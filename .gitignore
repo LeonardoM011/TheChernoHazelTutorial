@@ -3,14 +3,22 @@ bin/
 bin-int/
 .codelite/
 .build-debug/
+.vs/
 
 # Files
 Hazel.workspace
+Hazel.sln
 Makefile
 Hazel/Hazel.mk
 Hazel/Hazel.project
 Hazel/Hazel.txt
+Hazel/Hazel.vcxproj
+Hazel/Hazel.vcxproj.filters
+Hazel/Hazel.vcxproj.user
+Hazel/src/hzpch.h.gch
 Sandbox/Sandbox.mk
 Sandbox/Sandbox.project
 Sandbox/Sandbox.txt
-Hazel/src/hzpch.h.gch
+Sandbox/Sandbox.vcxproj
+Sandbox/Sandbox.vcxproj.filters
+Sandbox/Sandbox.vcxproj.user

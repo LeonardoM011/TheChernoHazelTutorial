@@ -1,5 +1,6 @@
 workspace "Hazel"
 	architecture "x64"
+	startproject "Sandbox"
 
 	configurations
 	{
@@ -10,9 +11,14 @@ workspace "Hazel"
 
 outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 
+IncludeDir = {}
+IncludeDir["GLFW"] = "Hazel/vendor/GLFW/include"
+
+include "Hazel/vendor/GLFW"
+
 project "Hazel"
 	location "Hazel"
-	kind "StaticLib"
+	kind "SharedLib"
 	language "C++"
 
 	targetdir ("bin/" .. outputdir .. "/%{prj.name}")
@@ -30,7 +36,14 @@ project "Hazel"
 	includedirs
 	{
 		"%{prj.name}/src",
-		"%{prj.name}/vendor/spdlog/include"
+		"%{prj.name}/vendor/spdlog/include",
+		"%{IncludeDir.GLFW}"
+	}
+
+	links
+	{
+		"GLFW",
+		"opengl32.lib"
 	}
 
 	filter "system:linux"
@@ -38,6 +51,16 @@ project "Hazel"
 		cppdialect "C++17"
 		staticruntime "On"
 		systemversion "latest"
+
+		links
+		{
+			"Xrandr",
+			"Xi",
+			"GLEW",
+			"GLU",
+			"GL",
+			"X11"
+		}
 
 		defines
 		{
@@ -47,8 +70,12 @@ project "Hazel"
 
 	filter "system:windows"
 		cppdialect "C++17"
-		staticruntime "On"
 		systemversion "latest"
+
+		links
+		{
+			"opengl32.lib"
+		}
 
 		defines
 		{
@@ -58,35 +85,23 @@ project "Hazel"
 
 		postbuildcommands
 		{
-			("{COPY} %{cfg.buildtarget.relpath} ../bin/" .. outputdir .. "/Sandbox")
+			("{COPY} %{cfg.buildtarget.relpath} \"../bin/" .. outputdir .. "/Sandbox/\"")
 		}
 
 	filter "configurations:Debug"
 		defines "HZ_DEBUG"
 		runtime "Debug"
-		staticruntime "Off"
 		symbols "On"
-	filter { "system:windows", "configurations:Debug" }
-		runtime "Debug"
-		staticruntime "Off"
 
 	filter "configurations:Release"
 		defines "HZ_RELEASE"
-		runtime "Debug"
-		staticruntime "Off"
+		runtime "Release"
 		optimize "On"
-	filter { "system:windows", "configurations:Release" }
-		runtime "Debug"
-		staticruntime "Off"
 
 	filter "configurations:Dist"
 		defines "HZ_DIST"
-		runtime "Debug"
-		staticruntime "Off"
+		runtime "Release"
 		optimize "On"
-	filter { "system:windows", "configurations:Dist" }
-		runtime "Debug"
-		staticruntime "Off"
 
 project "Sandbox"
 	location "Sandbox"
@@ -105,7 +120,8 @@ project "Sandbox"
 	includedirs
 	{
 		"Hazel/vendor/spdlog/include",
-		"Hazel/src"
+		"Hazel/src",
+		"%{IncludeDir.glm}"
 	}
 
 	links
@@ -125,7 +141,6 @@ project "Sandbox"
 
 	filter "system:windows"
 		cppdialect "C++17"
-		staticruntime "On"
 		systemversion "latest"
 
 		defines
@@ -136,26 +151,14 @@ project "Sandbox"
 	filter "configurations:Debug"
 		defines "HZ_DEBUG"
 		runtime "Debug"
-		staticruntime "Off"
 		symbols "On"
-	filter { "system:windows", "configurations:Debug" }
-		runtime "Debug"
-		staticruntime "Off"
 
 	filter "configurations:Release"
 		defines "HZ_RELEASE"
-		runtime "Debug"
-		staticruntime "Off"
+		runtime "Release"
 		optimize "On"
-	filter { "system:windows", "configurations:Release" }
-		runtime "Debug"
-		staticruntime "Off"
 
 	filter "configurations:Dist"
 		defines "HZ_DIST"
-		runtime "Debug"
-		staticruntime "Off"
+		runtime "Release"
 		optimize "On"
-	filter { "system:windows", "configurations:Dist" }
-		runtime "Debug"
-		staticruntime "Off"

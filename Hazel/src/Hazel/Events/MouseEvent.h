@@ -68,7 +68,7 @@ namespace Hazel {
         std::string ToString() const override {
             std::stringstream ss;
             ss << "MouseButtonPressedEvent: " << m_Button;
-            return ss.str()M
+			return ss.str();
         }
         
         EVENT_CLASS_TYPE(MouseButtonPressed)

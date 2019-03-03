@@ -1,5 +1,5 @@
 # TheChernoHazelTutorial
-This is my take on TheChernoProject's Game Engine Tutorial On Linux
+This is my take on TheChernoProject's Game Engine Tutorial
 
 ### Note for CodeLite users on Linux
 Sometimes CodeLite won't load source files for Sandbox project (Probably a bug) so you have to follow these steps:
